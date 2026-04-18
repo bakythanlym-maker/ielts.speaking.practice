@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Speaking Simulator | Practice & Record</title>
+    <meta name="description" content="A professional simulator to practice IELTS Speaking Part 1, 2, and 3 with real-time recording and audio playback.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>IELTS Speaking helper</h1>
+            <p>Practice Part 1, 2, & 3 in a real test environment</p>
+        </header>
+
+        <nav class="nav-wrapper">
+            <button id="part1-btn" class="nav-btn active" onclick="switchPart(1, this)">
+                <i data-lucide="message-square" class="nav-icon"></i> Part 1
+            </button>
+            <button id="part2-btn" class="nav-btn" onclick="switchPart(2, this)">
+                <i data-lucide="user" class="nav-icon"></i> Part 2
+            </button>
+            <button id="part3-btn" class="nav-btn" onclick="switchPart(3, this)">
+                <i data-lucide="users" class="nav-icon"></i> Part 3
+            </button>
+        </nav>
+
+        <main>
+            <section class="question-card" id="question-card">
+                <div id="category-label" class="question-category">Part 1: Introduction</div>
+                <div class="question-reel-viewport">
+                    <div id="question-reel" class="question-reel">
+                        <div id="question-text" class="reel-item">Click "Generate Question" to begin your practice session.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="controls-panel">
+                <div id="timer" class="timer">00:00</div>
+                
+                <div class="action-buttons">
+                    <button id="generate-btn" class="btn btn-generate" onclick="generateQuestion()">
+                        <i data-lucide="refresh-cw" class="btn-icon"></i> Generate Question
+                    </button>
+                    <button id="start-btn" class="btn btn-start" onclick="startRecording()">
+                        <i data-lucide="mic" class="btn-icon"></i> Start Recording
+                    </button>
+                    <button id="stop-btn" class="btn btn-stop" onclick="stopRecording()" disabled>
+                        <i data-lucide="square" class="btn-icon"></i> Stop
+                    </button>
+                </div>
+            </section>
+
+            <section class="recordings-section">
+                <h3>Recent Attempts</h3>
+                <div id="recordings-list" class="recordings-list">
+                    <!-- Dynamic recordings will appear here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
